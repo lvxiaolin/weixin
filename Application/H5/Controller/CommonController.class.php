@@ -10,7 +10,7 @@ class CommonController extends Controller {
         if (method_exists($this, '_init')) {
             $this->_init();
         }
-        if (!session("user_id")) {
+        if (!session("openid")) {
             $this->get_auth();
         }
     }
