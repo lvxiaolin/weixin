@@ -22,9 +22,9 @@ class AuthController extends Controller {
         }
         $user_info = json_decode($user_info, TRUE);
         
-        $url = 'http://wx.xigounet.com/'.I("get.state");
-        print_r($user_info);
-        exit;
+        $state = I("get.state");
+        $state = urldecode($state);
+        $url = 'http://wx.xigounet.com/'.$state;
         header('HTTP/1.1 301 Moved Permanently'); //发出301头部 
         header('Location:' . $url);
     }
