@@ -6,13 +6,10 @@ use Think\Controller;
 
 class IndexController extends Controller {
         
-        //授权地址
-        private $url;
 
 
         protected function _initialize(){
-                $r_url = urlencode('http://wx.xigounet.com/');
-                $this->url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.C("appID").'&redirect_uri='.$r_url.'&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+            
         }
 
         public function menu() {
@@ -21,7 +18,7 @@ class IndexController extends Controller {
                                     {
                                         "type": "view", 
                                         "name": "马上开启", 
-                                        "url": "'.$this->url.'"
+                                        "url": "http://wx.xigounet.com/"
                                     }, 
                                     {
                                         "name": "菜单", 
@@ -53,7 +50,7 @@ class IndexController extends Controller {
                                     {
                                         "type": "view", 
                                         "name": "寻找MM", 
-                                        "url": "'.$this->url.'"
+                                        "url": "http://wx.xigounet.com/"
                                     }, 
                                     {
                                         "name": "菜单", 
@@ -89,7 +86,7 @@ class IndexController extends Controller {
                                     {
                                         "type": "view", 
                                         "name": "寻找GG", 
-                                        "url": "'.$this->url.'"
+                                        "url": "http://wx.xigounet.com/"
                                     }, 
                                     {
                                         "name": "菜单", 
