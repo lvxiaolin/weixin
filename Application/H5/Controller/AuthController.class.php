@@ -22,6 +22,9 @@ class AuthController extends Controller {
         }
         $user_info = json_decode($user_info, TRUE);
         
+        session('nickname',$user_info['nickname']);
+        session('openid',$user_info['openid']);
+        
         $state = I("get.state");
         $state = urldecode($state);
         $url = 'http://wx.xigounet.com/'.$state;
